@@ -5,7 +5,7 @@ const _ = require('lodash');
 const ejs = require('ejs');
 const accounts = require('./routes/accounts/accounts.js');
 const products = require('./routes/products.js');
-const port = 4000;
+const port = 9000;
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
