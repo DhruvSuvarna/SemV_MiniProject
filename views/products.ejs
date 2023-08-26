@@ -1,0 +1,16 @@
+<%- include('./partials/head'); -%>
+<%- include('./partials/navbar'); -%>
+
+<ul>
+    <% productInfo.forEach((product)=>{ %>
+    <li>
+        <h2><%= product.name %></h2>
+        <p><%= product.description %></p>
+        <p><%= product.price %></p>
+        <p><%= product.category %></p>
+        <p><img src="<%= product.image %>" alt="<%= product.name %>"></p>
+    </li>
+    <% }); %>
+</ul>
+
+<%- include('./partials/footer'); -%>
