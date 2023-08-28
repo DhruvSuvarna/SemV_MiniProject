@@ -5,9 +5,16 @@ register.route('/farmer')
 .get((req, res)=>{
     res.render('register_farmer');
 })
-.post((req, res)=>{
-    console.log(req.body);
-    res.send("Registered successfully");
-});
+.post('/register', (req, res)=>{
+    User.register({username: req.body.username}, req.body.password)
+    .then((user)=>{
+        passport.authenticate("local")(req, res, ()=>{
+            res.redirect("/secrets");
+        });
+    })
+    .catch((err)=>{
+        console.log(err); res.redirect("/register");
+    });
+});        
 
 module.exports = register;
