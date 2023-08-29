@@ -1,20 +1,28 @@
-//User Schema
+const mongoose = require('mongoose');
+//User Schemas
 const farmerSchema = new mongoose.Schema({
     username: { type: String, required: true },
-    firstname: String,
-    lastname: String,
-    email: String,
-    phone: Number,
-    state: String,
-    city: String,
-    password: String,
-    googleId: String,
+    firstname: { type: String, required: true },
+    lastname: { type: String, required: true },
+    email: { type: String, required: true },
+    password: { type: String, required: true },
+    phone: { type: String, required: true },
+    state: { type: String, required: true },
+    city: { type: String, required: true }
 });
 
-//passport plugin
-farmerSchema.plugin(passportLocalMongoose);
-farmerSchema.plugin(findOrCreate);
-
+const consumerSchema = new mongoose.Schema({
+  username: { type: String, required: true },
+  firstName:String,
+  lastName:String,
+  email: { type: String, required: true },
+  password: { type: String, required: true },
+  phone: String,
+  city:String,
+  state:String,
+})
+//User Models
 const Farmer = new mongoose.model('Farmer', farmerSchema);
+const Consumer=new mongoose.model("Consumer",consumerSchema);
 
-module.exports = Farmer;
+module.exports = { Farmer, Consumer };

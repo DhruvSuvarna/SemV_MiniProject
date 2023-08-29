@@ -1,9 +1,9 @@
 <div class="">
-    <h2>Register as a farmer</h2>
-    <form action="/accounts/register/farmer" method="post">
+    <h2>Register as a customer</h2>
+    <form action="/accounts/register/customer" method="post">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
-       
+        
         <label for="firstname">First Name:</label>
         <input type="text" id="firstname" name="firstname" required>
 
@@ -22,16 +22,16 @@
         <div class="invisible" id="message"></div>
 
         <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
+        <input type="tel" id="phone" name="phone">
 
         <label for="state"> Select State:</label>
-        <select id="state" name="state" required>
+        <select id="state" name="state">
             <option value="">Select State</option>
             <option value="state1">Maharastra</option>       
         </select>
 
         <label for="city">Select City:</label>
-        <select id="city" name="city" required>
+        <select id="city" name="city">
             <option value="">Select City</option>
             <option value="city1">City 1</option>
             <option value="city2">City 2</option>

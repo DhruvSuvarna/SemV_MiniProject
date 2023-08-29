@@ -21,31 +21,10 @@ header{
     gap: 20px;
     padding: 0;
 }
-
-.google{
-    background-color: #fff;
-    height: fit-content !important;
-    width: fit-content !important;
-    padding: 0;
-    flex: none;
-  }
-  .googleA{
-    width: fit-content !important;
-    padding: 0 !important;
-    display: flex;
-    border: 2px solid #4285f4;
-  }
-  .icon{
-    padding: 0.8rem 1.2rem;
-  }
-  .sign-text{
-    padding: 10px;
-    color: #fff;
-    font-size: 1.1rem;
-    padding: 0.8rem 2rem;
-    background-color: #4285f4;
-  }
   
+.invisible{
+    display: none;
+}
 
 footer{
     position: fixed;

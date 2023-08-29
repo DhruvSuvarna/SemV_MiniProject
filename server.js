@@ -4,22 +4,14 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const _ = require('lodash');
 const ejs = require('ejs');
-const session = require('express-session');
-const passport = require('passport');
-const passportLocalMongoose = require('passport-local-mongoose');
-const GoogleStrategy = require('passport-google-oauth20/lib/strategy.js');
-const findOrCreate = require('mongoose-findorcreate');
 const accounts = require('./routes/accounts/accounts');
 const products = require('./routes/products');
-const port = 4000;
+const port = 9001;
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Connect to MongoDB using Mongoose
 mongoose.connect('mongodb://127.0.0.1:27017/AgriGo')
