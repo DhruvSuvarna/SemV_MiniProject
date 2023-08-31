@@ -1,9 +1,11 @@
-require('dotenv').config();
+// require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const _ = require('lodash');
 const ejs = require('ejs');
+let cities=[];
+let index=0;
 // const session = require('express-session');
 // const passport = require('passport');
 // const passportLocalMongoose = require('passport-local-mongoose');
@@ -34,7 +36,25 @@ app.use('/products', products)
 app.get("/", (req, res)=>{
     res.render('index');
 });
+app.get('/test',(req,res)=>{
+    var headers = new Headers();
+    headers.append("X-CSCAPI-KEY", "WExOZ3ZyQ1VPNHlqMkNOeDFDUGhuN3Z2QmVUbDFFREMxZHNtMmRIWg==");
+    var requestOptions = {
+        method: 'GET',
+        headers: headers,
+        redirect: 'follow'
+        };
 
+    fetch("https://api.countrystatecity.in/v1/countries/IN/states/MH/cities", requestOptions)
+    .then(response => response.json())
+    .then(result =>{
+       res.render('test',{cities:result})
+    })
+    .catch(error => console.log('error', error));
+  
+})
 app.listen(port, ()=>{
     console.log(`Server started on port ${port}`);
 });
+
+

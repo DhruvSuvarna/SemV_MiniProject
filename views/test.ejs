@@ -1,0 +1,8 @@
+<label for="city">Select City:</label>
+<select id="city" name="city" required>
+    <option value="">Select City</option>
+<% cities.forEach(function(city) {  %>
+    <%  var title=city.name; %>
+    <option ><%=city.name %></option>
+<% }) %>
+</select>
