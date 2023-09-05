@@ -3,9 +3,23 @@ const register = express();
 const { Farmer, Consumer } = require('../../models/user');
 const { isUndefined } = require('lodash');
 
+//city api integration code
+var headers = new Headers();
+    headers.append("X-CSCAPI-KEY", "WExOZ3ZyQ1VPNHlqMkNOeDFDUGhuN3Z2QmVUbDFFREMxZHNtMmRIWg==");
+    var requestOptions = {
+        method: 'GET',
+        headers: headers,
+        redirect: 'follow'
+        };
+
 register.route('/farmer')
 .get((req, res)=>{
-    res.render('register_farmer');
+    fetch("https://api.countrystatecity.in/v1/countries/IN/states/MH/cities", requestOptions)
+    .then(response => response.json())
+    .then(result =>{
+       res.render('register_farmer',{cities:result})
+    })
+    .catch(error => console.log('error', error));
 })
 .post((req, res)=>{
     let username = req.body.username;
@@ -63,7 +77,12 @@ register.route('/farmer')
 
 register.route('/consumer')
 .get((req, res)=>{
-    res.render('register_consumer');
+    fetch("https://api.countrystatecity.in/v1/countries/IN/states/MH/cities", requestOptions)
+    .then(response => response.json())
+    .then(result =>{
+       res.render('register_consumer',{cities:result});
+    })
+    .catch(error => console.log('error', error));
 })
 .post((req, res)=>{
     let username = req.body.username;
