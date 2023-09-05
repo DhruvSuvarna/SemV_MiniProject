@@ -46,11 +46,11 @@
     $('#password, #confirm_password').on('keyup', function () {
         if ($('#password').val() == $('#confirm_password').val()) {
           $('message').removeClass('invisible');
-          $('#message').innerHTML('Matching').css('color', 'green');
+          $('#message').text('Matching').css('color', 'green');
           $('input[type="submit"]').removeAttr('disabled');
         } else {
           $('message').removeClass('invisible');
-          $('#message').innerHTML('Not Matching').css('color', 'red');
+          $('#message').text('Not Matching').css('color', 'red');
           $('input[type="submit"]').attr('disabled','disabled');
         }
     });

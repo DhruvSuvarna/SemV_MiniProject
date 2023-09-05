@@ -1,6 +1,6 @@
 <div class="">
     <h2>Register as a customer</h2>
-    <form action="/accounts/register/customer" method="post">
+    <form action="/accounts/register/consumer" method="post">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         
@@ -27,7 +27,7 @@
         <label for="state"> Select State:</label>
         <select id="state" name="state">
             <option value="">Select State</option>
-            <option value="state1">Maharastra</option>       
+            <option value="maharashtra">Maharastra</option>       
         </select>
 
         <label for="city">Select City:</label>
@@ -46,11 +46,11 @@
     $('#password, #confirm_password').on('keyup', function () {
         if ($('#password').val() == $('#confirm_password').val()) {
           $('message').removeClass('invisible');
-          $('#message').innerHTML('Matching').css('color', 'green');
+          $('#message').text('Matching').css('color', 'green');
           $('input[type="submit"]').removeAttr('disabled');
         } else {
           $('message').removeClass('invisible');
-          $('#message').innerHTML('Not Matching').css('color', 'red');
+          $('#message').text('Not Matching').css('color', 'red');
           $('input[type="submit"]').attr('disabled','disabled');
         }
     });

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const _ = require('lodash');
 const ejs = require('ejs');
 const accounts = require('./routes/accounts/accounts');
-const products = require('./routes/products');
+const shop = require('./routes/shop');
 const port = 9001;
 
 const app = express();
@@ -14,12 +14,12 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 // Connect to MongoDB using Mongoose
-mongoose.connect('mongodb://127.0.0.1:27017/AgriGo')
+mongoose.connect(process.env.MongoDB_URI)
 .then(()=>console.log("MongoDB Connected!"))
 .catch((err)=>console.log(err));
 
 app.use('/accounts', accounts);
-app.use('/products', products)
+app.use('/shop', shop)
 
 app.get("/", (req, res)=>{
     res.render('index');
