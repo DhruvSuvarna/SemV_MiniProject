@@ -1,0 +1,154 @@
+<%- include('./partials/head'); -%>
+<%- include('./partials/navbar'); -%>
+
+<section id="prodetails" class="section-p1 ">
+    <div class="single-pro-image">
+        <img src="mg/features/lovepik-fruits-and-vegetables-poster-picture_501615020.jpg" alt="" width="100%" id="Mainimg">
+        <div class="samll-img-grp">
+            <img src="mg/features/lovepik-fruits-and-vegetables-poster-picture_501615020.jpg" alt="" width="100%" class="small-img">
+        </div> 
+        <div class="samll-img-grp">
+            <img src="mg/features/lovepik-fruits-and-vegetables-poster-picture_501615020.jpg" alt="" width="100%" class="small-img">
+        </div> 
+        <div class="samll-img-grp">
+            <img src="mg/features/lovepik-fruits-and-vegetables-poster-picture_501615020.jpg" alt="" width="100%" class="small-img">
+        </div> 
+    </div>
+   
+    <div class="single-pro-details">
+        <h6>Home / Fruits</h6> 
+        <h4>Apples</h4>
+        <h2>₹200</h2>
+        
+        <h3>Select Quantity</h3>
+        <!-- <select>
+            <option>Select Quantity</option>
+            <option>1/2 dozen</option>
+            <option>1 dozen</option>
+            <option>2 dozen</option>
+            <option>3 dozen</option>
+            <option>4 dozen</option> 
+        </select> -->
+        <input type="number" value="1">
+        <button class="normal">Add to cart</button>
+        <h4>Product Details</h4>
+        <span>Indulge in the crisp, sweet goodness of locally grown apples. 
+            Handpicked from orchards in our community, these apples are bursting with flavor 
+            and freshness. Sustainably cultivated and delivered straight to your doorstep,
+            our locally sourced apples are a delicious way to support local farmers 
+            while savoring the taste of homegrown goodness.</span>
+    </div>
+</section>
+
+<section id="product1" class="section-p1">
+    <h2>Related products</h2>   
+    <p>Here Farmers can Sell and customers can review or buy agriculture produce online</p>
+    <div class="pro-container">
+        <div class="pro">
+            <img src="img/features/lovepik-fruits-and-vegetables-poster-picture_501615020.jpg" width="200" height="200">
+            <div class="des">
+                
+                <h5>Vegetables</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            
+            </div>
+            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div>    
+
+        <div class="pro">
+            <img src="img/features/lovepik-fruits-and-vegetables-poster-picture_501615020.jpg" width="200" height="200">
+            <div class="des">
+                
+                <h5>Vegetables</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            
+            </div>
+            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div> 
+        <div class="pro">
+            <img src="img/features/lovepik-fruits-and-vegetables-poster-picture_501615020.jpg" width="200" height="200">
+            <div class="des">
+                
+                <h5>Vegetables</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            
+            </div>
+            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div> 
+        <div class="pro">
+            <img src="img/features/lovepik-fruits-and-vegetables-poster-picture_501615020.jpg" width="200" height="200">
+            <div class="des">
+                
+                <h5>Vegetables</h5>
+                <div class="star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            
+            </div>
+            <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+        </div> 
+       
+    </div>    
+    
+
+    
+    
+</section>
+
+<section id="newsletter" class="section-p1 section-m1" >
+    <div class="newstext">
+        <h4>Sign up for Newsletter </h4>
+        <p>Get E-mail updates on iour latest products <span>Special offers</span>
+        </p>
+    </div>
+
+    <div class="form">
+        <input type="text" placeholder="your email address">
+        <button class="normal">Sign up</button>
+    </div>
+</section>
+
+<script>
+    var MainImg = document.getElementById("Mainimg");
+    var smallimg= document.getElementsByClassName("small-img");
+
+    smallimg[0].onclick=function(){
+        MainImg.src = smallimg[0].src;
+    }
+
+    smallimg[1].onclick=function(){
+        MainImg.src = smallimg[1].src;
+    }
+
+    smallimg[2].onclick=function(){
+        MainImg.src = smallimg[2].src;
+    }
+
+    smallimg[3].onclick=function(){
+        MainImg.src = smallimg[3].src;
+    }
+</script>
+
+<%- include('./partials/footer'); -%>
