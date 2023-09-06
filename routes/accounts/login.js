@@ -2,6 +2,10 @@ const express = require('express');
 const login = express();
 const { Farmer, Consumer } = require('../../models/user')
 
+login.get('/ui', (req, res)=>{
+    res.render('login_ui');
+})
+
 login.route('/')
 .get((req, res)=>{
     res.render('login');
