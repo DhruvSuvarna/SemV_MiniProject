@@ -1,0 +1,25 @@
+<%- include('partials/navbar') -%>
+    <h1>Add Products</h1>
+    <form method="post" action="/add" enctype="multipart/form-data">
+        <div >  
+            <div>
+                <label for="productName" > Name:</label>
+                <input type="text"  name="productName" autofocus> 
+            </div>
+            <div>
+                <label for="productDescription" >Description:</label>
+                <textarea  name="productDescription" rows="5"></textarea>
+            </div>
+            <div>
+                <label for="productImage">Select Image:</label>
+                <input type="file" name="productImage" accept="image/*">
+
+            </div>
+            <div>
+                <label for="productSeller">Seller Name:</label>
+                <input type="text" name="productSeller">
+            </div>
+        </div>
+        <button type="submit">Submit</button>       
+    </form>   
+<%- include('partials/footer') -%>
