@@ -1,5 +1,5 @@
 const express=require('express');
-const {registerController} =require( '../controllers/authController.js');
+
 const {
   registerController,
   loginController,
@@ -10,16 +10,22 @@ const {
   getAllOrdersController,
   orderStatusController,
 } =require("../controllers/authController.js");
-const { isAdmin, requireSignIn }=require("../middlewares/authMiddleware.js");
+const { isAdmin, requireSignIn }=require("../middlewares/authMiddlewares.js");
 
 //router object
 const router=express.Router();
 
 //routing
 //REGISTER || METHOD POST
+router.get("/register", (req,res)=>{
+  res.render("register_consumer.ejs");
+})
 router.post("/register", registerController);
 
 //LOGIN || POST
+router.get("/login", (req,res) =>{
+  res.render("login.ejs");
+})
 router.post("/login", loginController);
 
 //Forgot Password || POST

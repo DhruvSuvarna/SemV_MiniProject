@@ -4,11 +4,11 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const _ = require('lodash');
 const ejs = require('ejs');
-const accounts = require('./routes/accounts/accounts');
+// const accounts = require('./routes/accounts/accounts');
 const shop = require('./routes/shop');
 const product = require('./routes/product');
 const authRoutes=require('./routes/authRoute.js');
-const categoryRoutes=require("./routes/categoryRoutes.js");
+const categoryRoutes=require("./routes/categoryRoute.js");
 const productRoutes=require("./routes/productRoutes.js");
 const morgan=require("morgan");
 const cors=require("cors");
@@ -35,7 +35,7 @@ mongoose.connect("mongodb+srv://Shibhya:Shibhya@miniproject.7sjqtbg.mongodb.net/
 .then(()=>console.log("MongoDB Connected!"))
 .catch((err)=>console.log(err));
 
-app.use('/accounts', accounts);
+// app.use('/accounts', accounts);
 app.use('/shop', shop)
 app.use('/product', product)
 

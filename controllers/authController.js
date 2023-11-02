@@ -5,9 +5,9 @@ const JWT =require('jsonwebtoken');
 
 const registerController = async (req, res) => {
     try {
-      const { name, email, password, phone, state,city } = req.body;
+      const { firstname,lastname, email, password, phone, state,city } = req.body;
       //validations
-      if (!name) {
+      if (!firstname) {
         return res.send({ error: "Name is Required" });
       }
       if (!email) {
@@ -33,7 +33,9 @@ const registerController = async (req, res) => {
       const hashedPassword = await hashPassword(password);
       //save
       const user = await new Consumer({
-        name,
+        username:firstname,
+        firstname,
+        lastname,
         email,
         phone,
         city,
@@ -82,8 +84,9 @@ const registerController = async (req, res) => {
           message: "Invalid Password",
         });
       }
-      //token
-      const token = await JWT.sign({ _id: user._id }, process.env.JWT_SECRET, {
+      //token\
+      const secret_key="UUIFNIU W*U"
+      const token = await JWT.sign({ _id: user._id }, secret_key, {
         expiresIn: "7d",
       });
       res.status(200).send({

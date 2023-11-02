@@ -5,7 +5,7 @@ const categoryModel=require("../models/orderModel.js");
 const fs=require("fs");
 const slugify=require("slugify");
 const braintree=require("braintree");
-const dotenv=require("dotenv");
+// const dotenv=require("dotenv");
 
 
 
@@ -376,4 +376,4 @@ const productCategoryController = async (req, res) => {
 //   }
 // };
 
-module.exports={createProductController, getProductController,getSingleProductController,deleteProductController,realtedProductController, productCategoryController,searchProductController,productListController,productCountController,productFiltersController};
+module.exports={createProductController, getProductController,getSingleProductController,deleteProductController,realtedProductController, productCategoryController,searchProductController,productListController,productCountController,productFiltersController,updateProductController, productPhotoController};
