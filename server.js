@@ -7,7 +7,7 @@ const ejs = require('ejs');
 const accounts = require('./routes/accounts/accounts');
 const shop = require('./routes/shop');
 const product = require('./routes/product');
-const port = 9001;
+const port = 3000;
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
