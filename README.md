@@ -1,9 +1,19 @@
-### Created by Dhruv Suvarna
-Agriculture focused ecommerce website built using **NodeJS** for the backend, **React** for the frontend, and **MongoDB** for the database. The website facilitates communication between farmers and consumers and showcases the latest agricultural technology and equipment.
-To run this project:
+# AgriGo
+An Agriculture focused ecommerce website built using **NodeJS** for the backend, **React** for the frontend, and **MongoDB** for the database. The website facilitates communication between farmers and consumers and showcases the latest agricultural technology and equipment.
+
+##
+
+To run this project go inside the Client Folder using (cd Client), then do the following steps:
 ```
 npm install
-node server.js
+```
+In terminal 1
+```
+npm run dev
+```
+In terminal 2
+```
+npm run serverCode
 ```
 ## Home Page
 ![image](https://github.com/DhruvSuvarna/SemV_MiniProject/assets/123581067/6dbe62f3-dc0f-46dd-9d50-9f06f0c68d30)
